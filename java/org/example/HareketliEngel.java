@@ -18,17 +18,15 @@ public abstract class HareketliEngel extends Engel {
         this.solHareketMiktari = solHareketMiktari;
         this.yukariHareketMiktari = yukariHareketMiktari;
         this.asagiHareketMiktari = asagiHareketMiktari;
-        this.konum = point; // Başlangıç konumu (0,0) olarak ayarlandı. İstediğiniz başka bir değere ayarlayabilirsiniz.
+        this.konum = point;
         merkez = true ;
     }
     public abstract void hareketEt() ;
 
-    // Engelin konumunu al
     public Point getKonum() {
         return this.konum;
     }
 
-    // Engelin konumunu ayarla
     public void setKonum(Point konum) {
         this.konum = konum;
     }

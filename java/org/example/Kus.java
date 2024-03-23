@@ -36,7 +36,6 @@ public class Kus extends HareketliEngel {
                 yukariYon = true;
             }
         }
-        // Draw red line from previous position to current position
         Graphics g = izgara.getGraphics();
         g.setColor(Color.RED);
         g.drawLine(previousPosition.x + getBoyutX() * izgara.getKareGenisligi() / 2, previousPosition.y, getKonum().x + getBoyutX() * izgara.getKareGenisligi() /2, getKonum().y);

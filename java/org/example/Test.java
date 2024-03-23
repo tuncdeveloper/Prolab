@@ -16,7 +16,7 @@ public class Test {
             frame = new JFrame("Izgara Test");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            izgara = Izgara.izgaraGetir(800, 800, (byte) 5);
+            izgara = Izgara.izgaraGetir(700, 700, (byte) 5);
             frame.getContentPane().add(izgara, BorderLayout.CENTER);
 
             JButton yeniHaritaButton = new JButton("Yeni Harita Oluştur");
@@ -31,7 +31,7 @@ public class Test {
 
                     hazineEkle = HazineEkle.hazineEkleGetir();
                     hazineEkle.hazineEkle();
-                    izgara.repaint(); // Yeniden çizmek için repaint çağrısı
+                    izgara.repaint();
                 }
             });
 
@@ -45,7 +45,7 @@ public class Test {
                         hazineLokasyon.add(hazine.getKonum()) ;
                     }
 
-                    ShortestPathFinder spf = new ShortestPathFinder() ;
+                    EnKısaYol spf = new EnKısaYol() ;
 
                     List<Point> shortestPath = spf.search(HazineEkle.hazineEkleGetir().hazineList);
                     izgara.setPatika(shortestPath);
@@ -61,6 +61,8 @@ public class Test {
 
 
             frame.pack();
-            frame.setVisible(true);        });
+            frame.setVisible(true);
+
+        });
     }
 }

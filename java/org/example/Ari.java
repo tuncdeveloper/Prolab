@@ -36,7 +36,6 @@ public class Ari extends HareketliEngel {
                 solYon = true;
             }
         }
-        // Draw red line from previous position to current position
         Graphics g = izgara.getGraphics();
         g.setColor(Color.RED);
         g.drawLine(previousPosition.x, previousPosition.y + getBoyutY() * izgara.getKareGenisligi() / 2, getKonum().x, getKonum().y+ getBoyutY() * izgara.getKareGenisligi() / 2);

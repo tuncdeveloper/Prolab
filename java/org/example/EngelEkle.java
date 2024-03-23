@@ -36,7 +36,6 @@ public class EngelEkle {
     public void engelEkle() {
         Engel engell = null;
 
-        // Her bir engel türünden en az 2 engel olacak şekilde oluştur
         for (int j = 0; j < 2 ; j++) {
             engellerList.add(RastgeleAgac());
             engellerList.add(RastgeleDag());
@@ -46,9 +45,8 @@ public class EngelEkle {
             engellerList.add(RastgeleKus());
         }
 
-        // Geri kalan engelleri rastgele oluştur
         for (int j = 0; j < MaxEngelSayisiHareketsiz - 8; j++) {
-            int rastgeleEngelTur = random.nextInt(4); // 4 farklı engel türü için rastgele bir sayı üret
+            int rastgeleEngelTur = random.nextInt(4);
             switch (rastgeleEngelTur){
                 case 0:
                     engell = RastgeleAgac();
@@ -66,9 +64,8 @@ public class EngelEkle {
             engellerList.add(engell);
         }
 
-        // Hareketli engelleri ekleyelim
         for (int i = 0; i < MaxEngelSayisiHareketli-4; i++) {
-            int rastgeleEngelTur = random.nextInt(2); // 2 farklı hareketli engel türü için rastgele bir sayı üret
+            int rastgeleEngelTur = random.nextInt(2);
             switch (rastgeleEngelTur){
                 case 0:
                     engell = RastgeleAri();

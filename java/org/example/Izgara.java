@@ -16,12 +16,12 @@ import java.util.List ;
 public class Izgara extends JPanel  {
 
     private static Izgara izgara ;
-    private static final int TIMER_DELAY = 500; // Her 500 milisaniyede bir hareket etsin
+    private static final int TIMER_DELAY = 500;
     private Random random  ;
     private byte kareGenisligi ;
     private Timer timer;
     private EngelEkle engelEkle;
-    ArrayList<Point> kullanilanKonumlar = new ArrayList<>(); // Kullanılan konumları saklamak için liste
+    ArrayList<Point> kullanilanKonumlar = new ArrayList<>();
     private int satir;
     private int sutun;
     private byte [][] izgaraMatris ;
@@ -38,10 +38,10 @@ public class Izgara extends JPanel  {
             @Override
             public void actionPerformed(ActionEvent e) {
                 hareketliEngelleriHareketEttir();
-                repaint(); // Yeniden çizim yapılmasını sağlar
+                repaint();
             }
         });
-        timer.start(); // Timer'ı başlat
+        timer.start();
 
     }
     public void temizle() {
@@ -51,7 +51,7 @@ public class Izgara extends JPanel  {
         EngelEkle engelEkle = EngelEkle.engelEkleGetir();
         for (Engel engel : engelEkle.engellerList) {
             if (engel instanceof Ari) {
-                ((Ari) engel).hareketEt(); // Hareketli engelleri hareket ettir
+                ((Ari) engel).hareketEt();
             }
             else if (engel instanceof Kus) {
                 ((Kus) engel).hareketEt();
@@ -124,7 +124,7 @@ public class Izgara extends JPanel  {
     private Image getImageForKarakter(Karakter karakter) throws IOException {
 
 
-            return ImageIO.read(new File("C:\\Java intelij\\Prolabb2Proje1\\resim\\foto\\mario.png"));
+            return ImageIO.read(new File("C:\\Java intelij\\Prolabb2Proje1\\resim\\foto\\tom.png"));
 
     }
 
@@ -227,7 +227,6 @@ public class Izgara extends JPanel  {
 
         engelEkle = EngelEkle.engelEkleGetir() ;
 
-        // Engelin x ve y koordinatlarını kontrol et
         if (x < 0 || y < 0 || x + boyutX * kareGenisligi > sutun * kareGenisligi || y + boyutY * kareGenisligi > satir * kareGenisligi)
             return false;
 
@@ -260,6 +259,7 @@ public class Izgara extends JPanel  {
 
     public void patikayiCiz (Graphics graphics) {
         if (patika != null) {
+            graphics.setColor(Color.GREEN);
             for (Point lokasyon : patika) {
                 graphics.fillRect(lokasyon.x, lokasyon.y, kareGenisligi,kareGenisligi);
             }

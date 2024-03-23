@@ -13,7 +13,7 @@ public class Karakter {
 
 
     public Karakter(Point konum) {
-        this.ad = "maria";
+        this.ad = "Tom";
         this.boyutX = 4;
         this.boyutY = 4;
         this.id = 123456;

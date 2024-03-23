@@ -36,7 +36,6 @@ public class HazineEkle {
     public void hazineEkle() {
         HazineSandigi hezine = null;
 
-        // Her bir engel türünden en az 2 engel olacak şekilde oluştur
         for (int j = 0; j < 5 ; j++) {
             hazineList.add(RastgeleAltin());
             hazineList.add(RastgeleZümrüt());
@@ -45,9 +44,8 @@ public class HazineEkle {
         }
 
 
-        // Hareketli engelleri ekleyelim
         for (int i = 0; i < MaxHazineSandigi-20; i++) {
-            int rastgeleEngelTur = random.nextInt(2); // 2 farklı hareketli engel türü için rastgele bir sayı üret
+            int rastgeleEngelTur = random.nextInt(2);
             switch (rastgeleEngelTur){
                 case 0:
                     hezine = RastgeleAltin();
